@@ -1,0 +1,186 @@
+@use "./variables" as *;
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: $p-1-5;
+  margin-bottom: $p-2-5;
+}
+
+.search {
+  width: min(500px, 100%);
+  height: 56px;
+  background: var(--element);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  padding: 0 $p-1;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  input {
+    flex: 1;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+
+    &::placeholder {
+      color: var(--input);
+    }
+  }
+}
+
+.filter {
+  position: relative;
+  width: 210px;
+
+  &__trigger {
+    width: 100%;
+    height: 56px;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--element);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $p-1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  &__menu {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--element);
+    border-radius: 6px;
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+    z-index: 10;
+
+    button {
+      width: 100%;
+      text-align: left;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      padding: 0.55rem $p-1;
+      cursor: pointer;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: $p-2;
+}
+
+.card {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--element);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__body {
+    padding: $p-1-5;
+
+    h3 {
+      margin-bottom: $p-1;
+    }
+
+    p {
+      margin-bottom: 0.45rem;
+    }
+  }
+}
+
+.empty {
+  opacity: 0.8;
+}
+
+.see-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.see-more-btn {
+  border: 0;
+  background: var(--element);
+  color: var(--text);
+  padding: 0.75rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+  font-weight: 600;
+}
+
+.all-loaded {
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  right: 200px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--element);
+  color: var(--text);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+}
+
+.scroll-top-btn__icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  filter: var(--scroll-icon-filter);
+}
+
+:root[data-theme="light"] {
+  --scroll-icon-filter: none;
+}
+
+:root[data-theme="dark"] {
+  --scroll-icon-filter: invert(1);
+}
+
+@media (max-width: 900px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scroll-top-btn {
+    right: 45%;
+  }
+}

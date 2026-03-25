@@ -1,0 +1,15 @@
+@use "./variables" as *;
+
+:root[data-theme="light"] {
+  --bg: #{$grey-50};
+  --text: #{$grey-950};
+  --element: #{$white};
+  --input: #{$grey-400};
+}
+
+:root[data-theme="dark"] {
+  --bg: #{$blue-950};
+  --text: #{$white};
+  --element: #{$blue-900};
+  --input: #{$white};
+}

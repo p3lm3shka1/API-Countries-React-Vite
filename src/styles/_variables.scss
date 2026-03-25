@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+// Colors
+$blue-900: hsl(209, 23%, 22%); //(Dark Mode Elements)
+$blue-950: hsl(207, 26%, 17%); //(Dark Mode Background)
+$grey-950: hsl(200, 15%, 8%); //(Light Mode Text)
+$grey-400: hsl(0, 0%, 50%); //(Light Mode Input)
+$grey-50: hsl(0, 0%, 99%); //(Light Mode Background)
+$white: hsl(0, 100%, 100%); //(Dark Mode Text & Light Mode Elements)
+
+// Spacing
+$p-0-5: 0.5rem;
+$p-1: 1rem;
+$p-1-5: 1.5rem;
+$p-2: 2rem;
+$p-2-5: 2.5rem;
+$p-3: 3rem;
+$p-3-5: 3.5rem;
+$p-4: 4rem;
+$p-4-5: 4.5rem;
+$p-5: 5rem;
+
+//Fonts
+$font-primary: "Nunito Sans", sans-serif;
+$f-w-300: 300;
+$f-w-600: 600;
+$f-w-800: 800;
