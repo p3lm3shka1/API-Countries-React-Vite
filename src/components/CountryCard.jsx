@@ -1,10 +1,22 @@
 import { Link } from "react-router-dom";
-import { formatPopulation } from "../utils.js";
+import { useState } from "react";
+import { formatPopulation } from "../utils";
 
-function CountryCard({ country }) {
+export default function CountryCard({ country }) {
+  const primary = country?.flags?.png || country?.flags?.svg || "";
+  const secondary = country?.flags?.svg || country?.flags?.png || "";
+  const [src, setSrc] = useState(primary);
+
   return (
     <Link to={`/country/${country.alpha3Code}`} className="card">
-      <img src={country.flags.png} alt={country.name} />
+      <img
+        src={src}
+        alt={country.name}
+        onError={() => {
+          setSrc((prev) => (prev !== secondary && secondary ? secondary : ""));
+        }}
+      />
+
       <div className="card__body">
         <h3>{country.name}</h3>
         <p>
@@ -20,5 +32,3 @@ function CountryCard({ country }) {
     </Link>
   );
 }
-
-export default CountryCard;

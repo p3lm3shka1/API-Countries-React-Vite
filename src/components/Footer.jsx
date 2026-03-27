@@ -18,6 +18,10 @@ function Footer() {
         >
           P3lm3shka1
         </a>
+        . Fetched from{" "}
+        <a href="https://restcountries.com/" target="_blank" rel="noreferrer">
+          REST Countries API
+        </a>
         .
       </p>
     </footer>

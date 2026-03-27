@@ -81,7 +81,7 @@ export default function Details() {
 
       <main className="container details">
         <button className="back-btn" onClick={() => navigate(-1)}>
-          ← Back
+          Back
         </button>
 
         {loading && <p>Loading country...</p>}
